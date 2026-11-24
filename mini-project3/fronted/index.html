@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README Generator | Gemini AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <h2>Readme<span>AI</span></h2>
+        </div>
+        <p>Powered by Gemini AI</p>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <span class="tag">AI DOCUMENTATION ASSISTANT</span>
+            <h1>Generate your README <span>in seconds.</span></h1>
+            <p>Turn your project details into professional documentation with the power of Gemini AI.</p>
+        </section>
+
+        <section class="workspace">
+
+            <div class="form-card">
+                <h2>Project Details</h2>
+                <p class="subtitle">Tell us about your project.</p>
+
+                <form id="readmeForm">
+
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName"
+                            placeholder="e.g. Student Task Manager" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="technologies">Technologies Used</label>
+                        <input type="text" id="technologies"
+                            placeholder="HTML, CSS, JavaScript, Node.js">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Project Description</label>
+                        <textarea id="description"
+                            placeholder="Describe what your project does..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="features">Key Features</label>
+                        <textarea id="features"
+                            placeholder="Add tasks, edit tasks, delete tasks..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" id="generateBtn">
+                        ✦ Generate README
+                    </button>
+
+                    <p id="status"></p>
+
+                </form>
+            </div>
+
+            <div class="preview-card">
+
+                <div class="preview-header">
+                    <div>
+                        <h2>README Preview</h2>
+                        <p class="subtitle">Your generated documentation appears here.</p>
+                    </div>
+                    <span class="file-label">README.md</span>
+                </div>
+
+                <div id="preview" class="preview-content">
+                    <div class="empty-state">
+                        <div class="empty-icon">✦</div>
+                        <h3>Your README will appear here</h3>
+                        <p>Enter your project details and click Generate README.</p>
+                    </div>
+                </div>
+
+                <div class="preview-actions">
+                    <button type="button" id="copyBtn" disabled>
+                        Copy Markdown
+                    </button>
+
+                    <button type="button" id="downloadBtn" disabled>
+                        Download README
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ✦ using Gemini AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

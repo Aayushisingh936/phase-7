@@ -1,0 +1,545 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6755d9;
+    --primary-dark: #5140bd;
+    --primary-light: #f0edff;
+    --background: #f6f7fb;
+    --surface: #ffffff;
+    --heading: #191a32;
+    --text: #62647a;
+    --muted: #9293a5;
+    --border: #e8e9f1;
+    --shadow: 0 12px 35px rgba(30, 30, 70, 0.06);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--heading);
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    font-size: 24px;
+    box-shadow: 0 5px 12px rgba(103, 85, 217, 0.25);
+}
+
+.logo h2 {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.logo h2 span {
+    color: var(--primary);
+}
+
+.header p {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1320px;
+    margin: 55px auto;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 26px;
+    align-items: stretch;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.form-card,
+.preview-card {
+    min-width: 0;
+    background: var(--surface);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.form-card h2,
+.preview-card h2 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+
+/* =========================
+   FORM
+========================= */
+
+#readmeForm {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
+}
+
+.form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fafaff;
+    color: var(--heading);
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-group input {
+    height: 46px;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(103, 85, 217, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a5a5b5;
+}
+
+/* Description and Features use full width */
+
+.form-group:has(#description),
+.form-group:has(#features) {
+    grid-column: 1 / -1;
+}
+
+/* =========================
+   GENERATE BUTTON
+========================= */
+
+#generateBtn {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 48px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+#generateBtn:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(103, 85, 217, 0.23);
+}
+
+#generateBtn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+#status {
+    grid-column: 1 / -1;
+    min-height: 16px;
+    margin: -8px 0 0;
+    font-size: 12px;
+    color: var(--primary);
+    text-align: center;
+}
+
+/* =========================
+   PREVIEW HEADER
+========================= */
+
+.preview-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.file-label {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   README PREVIEW
+========================= */
+
+.preview-content {
+    flex: 1;
+    min-height: 440px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 25px 5px;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.empty-icon {
+    font-size: 45px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    color: var(--heading);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Markdown headings */
+
+.preview-content h1,
+.preview-content h2,
+.preview-content h3 {
+    color: var(--heading);
+    margin: 20px 0 10px;
+    line-height: 1.4;
+}
+
+.preview-content h1 {
+    font-size: 25px;
+}
+
+.preview-content h2 {
+    font-size: 20px;
+}
+
+.preview-content h3 {
+    font-size: 16px;
+}
+
+.preview-content p {
+    margin-bottom: 13px;
+}
+
+.preview-content ul,
+.preview-content ol {
+    padding-left: 23px;
+    margin-bottom: 16px;
+}
+
+.preview-content li {
+    margin-bottom: 5px;
+}
+
+.preview-content pre {
+    background: #f4f3fa;
+    padding: 15px;
+    border-radius: 9px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.preview-content code {
+    font-family: monospace;
+    background: #f0eef8;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.preview-content pre code {
+    background: transparent;
+    padding: 0;
+}
+
+.preview-content a {
+    color: var(--primary);
+}
+
+/* =========================
+   PREVIEW ACTION BUTTONS
+========================= */
+
+.preview-actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.preview-actions button {
+    flex: 1;
+    min-height: 43px;
+    padding: 11px;
+    border-radius: 9px;
+    border: 1px solid var(--primary);
+    background: white;
+    color: var(--primary);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.preview-actions button:hover:not(:disabled) {
+    background: var(--primary-light);
+}
+
+.preview-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 92%;
+        margin: 40px auto;
+    }
+
+    .preview-content {
+        min-height: 300px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .header {
+        height: 68px;
+        padding: 0 5%;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .header p {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 32px auto;
+    }
+
+    .hero {
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .form-card,
+    .preview-card {
+        padding: 21px;
+    }
+
+    #readmeForm {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .form-group:has(#description),
+    .form-group:has(#features) {
+        grid-column: auto;
+    }
+
+    #generateBtn,
+    #status {
+        grid-column: auto;
+    }
+
+    .preview-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 380px) {
+    .header p {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
