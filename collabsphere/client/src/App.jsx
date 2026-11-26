@@ -5,8 +5,6 @@ import remarkGfm from "remark-gfm";
 import SimpleMDE from "react-simplemde-editor";
 const API = "https://collabsphere-backend-9dlc.onrender.com/api";
 
-const API = "http://127.0.0.1:5000/api";
-
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [isRegister, setIsRegister] = useState(false);
