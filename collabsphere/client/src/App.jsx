@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from "react";
 import "./App.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import SimpleMDE from "react-simplemde-editor";
-import "easymde/dist/easymde.min.css";
+const API = "https://collabsphere-backend-9dlc.onrender.com/api";
 
 const API = "http://127.0.0.1:5000/api";
 
